@@ -1,0 +1,59 @@
+<!-- NAVBAR -->
+<nav class="bg-[#0A1931] text-white sticky top-0 z-50 shadow-xl">
+  <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+    <!-- Logo -->
+    <a routerLink="/" (click)="closeMobileMenu()" class="flex items-center gap-3 cursor-pointer">
+      <div
+        class="w-10 h-10 bg-[#F5B400] rounded-2xl flex items-center justify-center text-[#0A1931] text-3xl font-bold logo-font shadow-inner">
+        T
+      </div>
+      <div>
+        <span class="text-2xl font-semibold tracking-tighter logo-font">TGS</span>
+        <span class="text-xs text-[#F5B400] tracking-[2px] block -mt-1">THE GROWTH SOURCE</span>
+      </div>
+    </a>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+      <a routerLink="/" class="nav-link">Home</a>
+      <a routerLink="/about" class="nav-link">About</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#solutions" class="nav-link">Solutions</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#referral" class="nav-link">Referral</a>
+      <a href="#insights" class="nav-link">Insights</a>
+      <a routerLink="/contact" class="nav-link">Contact</a>
+    </div>
+    <div class="hidden md:flex items-center gap-4">
+      <button routerLink="/contact"
+        class="px-8 py-3.5 bg-white text-[#0A1931] font-semibold rounded-3xl hover:bg-[#F5B400] hover:text-white transition-all shadow-lg">
+        Get Consultation
+      </button>
+    </div>
+
+    <!-- Mobile Hamburger -->
+    <button (click)="toggleMobileMenu()" class="md:hidden flex flex-col gap-1.5 hamburger">
+      <span class="w-7 h-0.5 bg-white"></span>
+      <span class="w-7 h-0.5 bg-white"></span>
+      <span class="w-7 h-0.5 bg-white"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div [class.hidden]="!mobileMenuOpen" class="md:hidden bg-[#0A1931] px-6 py-6">
+    <div class="flex flex-col gap-5 text-lg font-medium">
+      <a routerLink="/" (click)="closeMobileMenu()" class="nav-link">Home</a>
+      <a routerLink="/about" (click)="closeMobileMenu()" class="nav-link">About</a>
+      <a href="#services" (click)="closeMobileMenu()" class="nav-link">Services</a>
+      <a href="#solutions" (click)="closeMobileMenu()" class="nav-link">Solutions</a>
+      <a href="#projects" (click)="closeMobileMenu()" class="nav-link">Projects</a>
+      <a href="#referral" (click)="closeMobileMenu()" class="nav-link">Referral</a>
+      <a href="#insights" (click)="closeMobileMenu()" class="nav-link">Insights</a>
+      <a routerLink="/contact" (click)="closeMobileMenu()" class="nav-link">Contact</a>
+      <button routerLink="/contact" (click)="closeMobileMenu()"
+        class="mt-4 w-full py-4 bg-[#F5B400] text-[#0A1931] font-bold rounded-3xl">
+        Get Consultation
+      </button>
+    </div>
+  </div>
+</nav>

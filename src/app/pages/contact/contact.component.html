@@ -1,0 +1,63 @@
+<!-- CONTACT PAGE -->
+<div class="bg-gradient-to-br from-[#0A1931] to-[#1F6FEB] text-white min-h-screen pt-12 sm:pt-16 md:pt-20">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 md:gap-16 px-4 sm:px-6 py-12 sm:py-16 md:py-24 items-center">
+
+    <!-- LEFT SIDE -->
+    <div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
+        Let's Grow <span class="text-[#F5B400]">Together</span>
+      </h1>
+      <p class="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-gray-300">
+        Tell us your business idea and we will help you build, scale and grow it like a real startup.
+      </p>
+
+      <!-- FORM -->
+      <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)"
+        class="mt-8 sm:mt-12 space-y-4 sm:space-y-6 backdrop-blur-xl bg-white/10 p-6 sm:p-8 md:p-10 rounded-3xl border border-white/20 shadow-2xl">
+
+        <input type="text" placeholder="Your Name" [(ngModel)]="formData.name" name="name" required
+          class="w-full px-4 sm:px-6 py-3 sm:py-4 rounded-xl bg-white/20 border border-white/30 placeholder-gray-300 focus:border-[#F5B400] outline-none text-white text-sm sm:text-base">
+
+        <input type="email" placeholder="Business Email" [(ngModel)]="formData.email" name="email" required
+          class="w-full px-4 sm:px-6 py-3 sm:py-4 rounded-xl bg-white/20 border border-white/30 placeholder-gray-300 focus:border-[#F5B400] outline-none text-white text-sm sm:text-base">
+
+        <input type="tel" placeholder="Phone Number" [(ngModel)]="formData.phone" name="phone" required
+          class="w-full px-4 sm:px-6 py-3 sm:py-4 rounded-xl bg-white/20 border border-white/30 placeholder-gray-300 focus:border-[#F5B400] outline-none text-white text-sm sm:text-base">
+
+        <textarea placeholder="Tell us about your business goals..." rows="5" [(ngModel)]="formData.message" name="message" required
+          class="w-full px-4 sm:px-6 py-3 sm:py-4 rounded-xl bg-white/20 border border-white/30 placeholder-gray-300 focus:border-[#F5B400] outline-none text-white text-sm sm:text-base resize-none"></textarea>
+
+        <button type="submit" [disabled]="!contactForm.valid"
+          class="w-full py-3 sm:py-4 bg-[#F5B400] text-black font-bold text-base sm:text-lg rounded-xl hover:scale-105 transition duration-300 shadow-lg disabled:opacity-50">
+          🚀 Send Message
+        </button>
+
+      </form>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="space-y-6 sm:space-y-8 md:space-y-10">
+
+      <!-- CONTACT CARD -->
+      <div class="bg-white text-black p-6 sm:p-8 rounded-3xl shadow-2xl">
+        <h3 class="text-xl sm:text-2xl font-bold">📍 Nagpur Office</h3>
+        <p class="mt-3 sm:mt-4 text-base sm:text-lg text-gray-700">
+          Ready to grow your business? Reach out to us today!
+        </p>
+
+        <div class="mt-4 sm:mt-6 text-base sm:text-lg font-semibold space-y-2">
+          <div>📞 +91 9764090337</div>
+          <div>✉ tgsoofficialacgmail.com</div>
+        </div>
+      </div>
+
+      <!-- MAP -->
+      <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.5!2d73.789!3d20.0"
+          width="100%" height="250" style="border:0;" loading="lazy" class="w-full h-56 sm:h-80">
+        </iframe>
+      </div>
+
+    </div>
+  </div>
+</div>

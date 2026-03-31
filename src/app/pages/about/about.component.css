@@ -1,0 +1,30 @@
+/* Add any component-specific styles here */
+.logo-font {
+  font-family: 'Urbanist', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.about-hero-bg {
+  background: linear-gradient(135deg, rgba(10, 25, 49, 0.85) 0%, rgba(31, 111, 235, 0.75) 100%),
+              url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=800&fit=crop') center/cover no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-hero-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(245, 180, 0, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(31, 111, 235, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.about-hero-bg > * {
+  position: relative;
+  z-index: 10;
+}
