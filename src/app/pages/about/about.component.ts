@@ -13,14 +13,14 @@ declare var AOS: any;
 })
 export class AboutComponent implements OnInit, OnDestroy {
   team = [
-    { name: 'Saim Kazi', position: 'Founder', image: 'https://saimfsd.github.io/tgs-website/images/496510240_576862804971005_7353621515092664104_n_576862801637672%20-%20Praful%20Kharpuriye.jpg' },
-    { name: 'Praful', position: 'Co-Founder', image: 'https://saimfsd.github.io/tgs-website/images/IMG_20260311_205714994_HDR%20-%20Sujal%20Hirade.jpg' },
-    { name: 'Sujal', position: 'Manager', image: 'https://picsum.photos/300/300?1' },
-    { name: 'Mahesh Bhakre', position: 'Research & Analytics', image: 'https://picsum.photos/300/300?2' },
-    { name: 'Ammar Pathan', position: 'Strategy & Communication Partner', image: 'https://picsum.photos/300/300?3' },
-    { name: 'Vaishali Dewase', position: 'Web Developer & Team Executor', image: 'https://picsum.photos/300/300?4' },
-    { name: 'Divya Sharma', position: 'Client Relationship Manager', image: 'https://picsum.photos/300/300?5' },
-    { name: 'Samiksha Verma', position: 'Client Research Specialist', image: 'https://picsum.photos/300/300?6' }
+    { name: 'Saim Kazi', position: 'Founder', image: 'images/sahim_kazi.jpeg' },
+    { name: 'Praful', position: 'Co-Founder', image: 'images/praful_kharpuriye.jpeg' },
+    { name: 'Sujal', position: 'Manager', image: 'images/sujal_hirade.jpeg' },
+    { name: 'Ammar Pathan', position: 'Strategy & Communication Partner', image: 'images/ammar_khan.jpeg' },
+    { name: 'Mahesh Bhakre', position: 'Research & Analytics', image: 'images/mahesh_bhakre.jpeg' },
+    { name: 'Vaishali Dewase', position: 'Web Developer & Team Executor', image: 'images/vaishali_dewase.jpeg' },
+    { name: 'Divya Sharma', position: 'Client Relationship Manager', image: 'images/divya_sharma.jpeg' },
+    { name: 'Samiksha Verma', position: 'Client Research Specialist', image: 'images/samiksha_verma.jpeg' }
   ];
 
   ngOnInit() {
