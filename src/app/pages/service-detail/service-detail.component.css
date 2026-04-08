@@ -1,0 +1,60 @@
+/* Service Detail Component Styles */
+
+:host {
+  display: block;
+}
+
+/* Smooth animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Feature list styling */
+li {
+  animation: slideDown 0.5s ease-out forwards;
+}
+
+li:nth-child(1) { animation-delay: 0.1s; }
+li:nth-child(2) { animation-delay: 0.2s; }
+li:nth-child(3) { animation-delay: 0.3s; }
+li:nth-child(4) { animation-delay: 0.4s; }
+li:nth-child(5) { animation-delay: 0.5s; }
+li:nth-child(6) { animation-delay: 0.6s; }
+li:nth-child(7) { animation-delay: 0.7s; }
+li:nth-child(8) { animation-delay: 0.8s; }
+
+/* Technology tags hover effect */
+span {
+  transition: all 0.3s ease;
+}
+
+span:hover {
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  :host ::ng-deep .logo-font {
+    font-family: 'DM Sans', sans-serif;
+  }
+}

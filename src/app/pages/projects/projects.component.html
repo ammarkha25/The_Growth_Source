@@ -1,0 +1,142 @@
+<!-- HERO SECTION -->
+<section class="bg-[#0A1931] text-white py-12 sm:py-16 md:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+    <div class="mb-8 sm:mb-12">
+      <span class="inline-block px-4 sm:px-6 py-2 bg-[#1F6FEB] text-white text-xs font-bold rounded-full mb-4">PORTFOLIO</span>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold logo-font text-white">
+        Real Projects. Real Results.
+      </h1>
+      <p class="mt-4 sm:mt-6 text-base sm:text-lg text-gray-300 max-w-2xl mx-auto">
+        Discover how we've transformed businesses across industries with innovative digital solutions
+      </p>
+    </div>
+
+    <!-- FILTER BUTTONS -->
+    <div class="flex flex-wrap gap-3 justify-center">
+      <button
+        *ngFor="let category of categories"
+        (click)="filterByCategory(category)"
+        [class.active]="selectedCategory === category"
+        class="px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-semibold transition-all"
+        [ngClass]="{
+          'bg-[#F5B400] text-[#0A1931]': selectedCategory === category,
+          'bg-[#1F6FEB]/20 text-white hover:bg-[#1F6FEB]/40': selectedCategory !== category
+        }">
+        {{ category }}
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS GRID -->
+<section class="py-12 sm:py-16 md:py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <!-- GRID -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+      <!-- PROJECT CARD -->
+      <div
+        *ngFor="let project of filteredProjects"
+        class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition duration-500 border border-gray-200">
+
+        <!-- IMAGE SECTION -->
+        <div class="relative overflow-hidden h-40 sm:h-56 bg-gray-200">
+          <img [src]="project.image"
+            [alt]="project.title"
+            class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition">
+          </div>
+
+          <!-- BADGE -->
+          <div class="absolute bottom-4 left-4 bg-[#F5B400] text-[#0A1931] px-4 py-1 rounded-full text-sm font-bold">
+            {{ project.badge }}
+          </div>
+
+          <!-- OVERLAY CTA -->
+          <div
+            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
+            <button
+              [routerLink]="getProjectUrl(project.id)"
+              class="px-6 py-3 bg-[#F5B400] text-[#0A1931] font-bold rounded-full text-sm hover:shadow-lg transition">
+              View Details →
+            </button>
+          </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="p-4 sm:p-6">
+          <span class="text-xs bg-[#1F6FEB]/10 text-[#1F6FEB] px-3 py-1 rounded-full font-semibold">
+            {{ project.category }}
+          </span>
+
+          <h3 class="font-bold text-base sm:text-lg mt-3 sm:mt-4 text-[#0A1931]">
+            {{ project.title }}
+          </h3>
+
+          <p class="text-gray-600 mt-2 text-xs sm:text-sm leading-relaxed">
+            {{ project.description }}
+          </p>
+
+          <!-- FOOTER -->
+          <div class="mt-4 sm:mt-5 pt-4 sm:pt-5 border-t border-gray-200 flex items-center justify-between">
+            <div class="flex gap-2">
+              <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">5+ Tech</span>
+            </div>
+            <button
+              [routerLink]="getProjectUrl(project.id)"
+              class="text-[#1F6FEB] font-semibold text-sm hover:text-[#F5B400] transition flex items-center gap-1">
+              Learn More <i class="fa-solid fa-arrow-right text-xs"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NO PROJECTS MESSAGE -->
+    <div *ngIf="filteredProjects.length === 0" class="text-center py-20">
+      <p class="text-gray-500 text-lg">No projects found in this category.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS SECTION -->
+<section class="py-12 sm:py-16 md:py-20 bg-[#0A1931] text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-10 text-center">
+      <div>
+        <div class="text-4xl sm:text-5xl md:text-6xl font-bold text-[#F5B400]">{{ projects.length }}+</div>
+        <p class="text-gray-400 text-xs sm:text-base md:text-lg mt-2 sm:mt-4">Projects Completed</p>
+      </div>
+      <div>
+        <div class="text-4xl sm:text-5xl md:text-6xl font-bold text-[#F5B400]">{{ categories.length - 1 }}</div>
+        <p class="text-gray-400 text-xs sm:text-base md:text-lg mt-2 sm:mt-4">Industries Served</p>
+      </div>
+      <div>
+        <div class="text-4xl sm:text-5xl md:text-6xl font-bold text-[#F5B400]">200+</div>
+        <p class="text-gray-400 text-xs sm:text-base md:text-lg mt-2 sm:mt-4">Satisfied Clients</p>
+      </div>
+      <div>
+        <div class="text-4xl sm:text-5xl md:text-6xl font-bold text-[#F5B400]">₹50 Cr</div>
+        <p class="text-gray-400 text-xs sm:text-base md:text-lg mt-2 sm:mt-4">Client Revenue Generated</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="py-12 sm:py-16 md:py-24 bg-white">
+  <div class="max-w-4xl mx-auto text-center px-4 sm:px-6">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold logo-font text-[#0A1931]">
+      Your Project Could Be Next
+    </h2>
+    <p class="mt-4 sm:mt-6 text-base sm:text-lg text-gray-600">
+      Let's discuss how we can transform your business with proven strategies and cutting-edge technology.
+    </p>
+    <button
+      routerLink="/contact"
+      class="mt-8 sm:mt-12 px-6 sm:px-16 py-4 sm:py-6 bg-[#F5B400] text-[#0A1931] font-bold text-base sm:text-lg rounded-3xl hover:shadow-2xl transition whitespace-nowrap">
+      Start Your Project Today →
+    </button>
+  </div>
+</section>

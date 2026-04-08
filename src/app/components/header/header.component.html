@@ -17,11 +17,11 @@
     <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
       <a routerLink="/" class="nav-link">Home</a>
       <a routerLink="/about" class="nav-link">About</a>
-      <a href="#services" class="nav-link">Services</a>
-      <a href="#solutions" class="nav-link">Solutions</a>
-      <a href="#projects" class="nav-link">Projects</a>
+      <a routerLink="/services" class="nav-link">Services</a>
+      <!-- <a href="#solutions" class="nav-link">Solutions</a> -->
+      <a routerLink="/projects" class="nav-link">Projects</a>
       <a href="#referral" class="nav-link">Referral</a>
-      <a href="#insights" class="nav-link">Insights</a>
+      <!-- <a href="#insights" class="nav-link">Insights</a> -->
       <a routerLink="/contact" class="nav-link">Contact</a>
     </div>
     <div class="hidden md:flex items-center gap-4">
@@ -44,9 +44,9 @@
     <div class="flex flex-col gap-5 text-lg font-medium">
       <a routerLink="/" (click)="closeMobileMenu()" class="nav-link">Home</a>
       <a routerLink="/about" (click)="closeMobileMenu()" class="nav-link">About</a>
-      <a href="#services" (click)="closeMobileMenu()" class="nav-link">Services</a>
+      <a routerLink="/services" (click)="closeMobileMenu()" class="nav-link">Services</a>
       <a href="#solutions" (click)="closeMobileMenu()" class="nav-link">Solutions</a>
-      <a href="#projects" (click)="closeMobileMenu()" class="nav-link">Projects</a>
+      <a routerLink="/projects" (click)="closeMobileMenu()" class="nav-link">Projects</a>
       <a href="#referral" (click)="closeMobileMenu()" class="nav-link">Referral</a>
       <a href="#insights" (click)="closeMobileMenu()" class="nav-link">Insights</a>
       <a routerLink="/contact" (click)="closeMobileMenu()" class="nav-link">Contact</a>

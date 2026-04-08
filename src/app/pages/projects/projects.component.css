@@ -1,0 +1,110 @@
+/* GENERAL STYLES */
+:host {
+  display: block;
+}
+
+/* ANIMATIONS */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* FILTER BUTTONS */
+button.active {
+  box-shadow: 0 4px 15px rgba(245, 180, 0, 0.3);
+}
+
+button:not(.active) {
+  transition: all 0.3s ease;
+}
+
+button:not(.active):hover {
+  background-color: rgba(31, 111, 235, 0.5) !important;
+  transform: translateY(-2px);
+}
+
+/* PROJECT CARDS */
+.group {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.group:hover {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* IMAGE SCALING */
+.group img {
+  transition: transform 0.5s ease;
+}
+
+.group:hover img {
+  transform: scale(1.1);
+}
+
+/* STAT ANIMATIONS */
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE TEXT */
+@media (max-width: 640px) {
+  .logo-font {
+    font-size: 1.5rem;
+    letter-spacing: -0.05em;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .logo-font {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .logo-font {
+    font-size: 2.25rem;
+  }
+}
+
+/* SMOOTH TRANSITIONS */
+* {
+  transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* CARD HOVER EFFECTS */
+.rounded-3xl {
+  overflow: hidden;
+  position: relative;
+}
+
+/* BADGE STYLING */
+.group .absolute.bottom-4 {
+  z-index: 10;
+}
+
+/* OVERLAY EFFECTS */
+.group:hover > div:nth-child(1) > div:nth-child(2) {
+  opacity: 1 !important;
+}
+
+/* BORDER SUBTLE */
+.border {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.group:hover .border {
+  border-color: rgba(31, 111, 235, 0.2);
+}

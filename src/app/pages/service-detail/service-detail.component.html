@@ -1,0 +1,236 @@
+<!-- HERO SECTION -->
+<section *ngIf="service" class="hero-bg min-h-[60vh] sm:min-h-[70vh] flex items-center justify-center text-white py-12 sm:py-16 md:py-20 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-20">
+    <i [class]="'fa-solid ' + service.icon + ' absolute text-9xl sm:text-[200px] text-[#F5B400] opacity-10 top-10 right-10'"></i>
+  </div>
+
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center relative z-10">
+    <!-- BREADCRUMB -->
+    <div class="mb-6 sm:mb-8">
+      <a 
+        routerLink="/services" 
+        (click)="scrollToTop()"
+        class="text-[#F5B400] hover:text-white transition text-sm font-semibold flex items-center justify-center gap-2">
+        <i class="fa-solid fa-arrow-left"></i>
+        Back to Services
+      </a>
+    </div>
+
+    <!-- ICON BADGE -->
+    <div class="inline-block mb-4 sm:mb-6">
+      <i [class]="'fa-solid ' + service.icon + ' text-6xl sm:text-8xl text-[#F5B400]'"></i>
+    </div>
+
+    <!-- TITLE -->
+    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight logo-font tracking-tighter mb-4 sm:mb-6">
+      {{ service.title }}
+    </h1>
+
+    <!-- SUBTITLE -->
+    <p class="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+      {{ service.shortDescription }}
+    </p>
+  </div>
+</section>
+
+<!-- CONTENT SECTION -->
+<section *ngIf="service" class="py-12 sm:py-16 md:py-24 bg-white">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <!-- OVERVIEW -->
+    <div class="mb-12 sm:mb-16 md:mb-20">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#0A1931] logo-font mb-6 sm:mb-10">
+        About This Service
+      </h2>
+      <p class="text-base sm:text-lg text-gray-700 leading-relaxed whitespace-pre-line">
+        {{ service.longDescription }}
+      </p>
+    </div>
+
+    <!-- TWO COLUMN LAYOUT -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
+      <!-- FEATURES -->
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-semibold text-[#0A1931] logo-font mb-6 sm:mb-8">
+          Key Features
+        </h2>
+        <ul class="space-y-3 sm:space-y-4">
+          <li *ngFor="let feature of service.features" class="flex items-start gap-3 sm:gap-4">
+            <div class="flex-shrink-0 mt-1">
+              <i class="fa-solid fa-check-circle text-[#F5B400] text-xl"></i>
+            </div>
+            <span class="text-base sm:text-lg text-gray-700">{{ feature }}</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- TECHNOLOGIES -->
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-semibold text-[#0A1931] logo-font mb-6 sm:mb-8">
+          Technologies Used
+        </h2>
+        <div class="flex flex-wrap gap-3 sm:gap-4">
+          <span 
+            *ngFor="let tech of service.technologies"
+            class="px-4 sm:px-6 py-2 sm:py-3 bg-[#1F6FEB] text-white rounded-full text-sm sm:text-base font-medium hover:shadow-lg transition">
+            {{ tech }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS SECTION -->
+<section *ngIf="service" class="py-12 sm:py-16 md:py-24 bg-[#0A1931] text-white">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold text-center logo-font mb-8 sm:mb-12 md:mb-16">
+      Why This Service Matters
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+      <div class="bg-[#1F6FEB]/10 p-6 sm:p-8 rounded-3xl border border-[#1F6FEB]/20 hover:border-[#F5B400]/50 transition">
+        <i class="fa-solid fa-rocket text-4xl text-[#F5B400] mb-4 sm:mb-6"></i>
+        <h3 class="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Accelerate Growth</h3>
+        <p class="text-gray-300 text-sm sm:text-base">Fast-track your business expansion with proven solutions and strategic implementation.</p>
+      </div>
+
+      <div class="bg-[#1F6FEB]/10 p-6 sm:p-8 rounded-3xl border border-[#1F6FEB]/20 hover:border-[#F5B400]/50 transition">
+        <i class="fa-solid fa-chart-line text-4xl text-[#F5B400] mb-4 sm:mb-6"></i>
+        <h3 class="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Measurable ROI</h3>
+        <p class="text-gray-300 text-sm sm:text-base">Track results with detailed analytics and reporting that show real business impact.</p>
+      </div>
+
+      <div class="bg-[#1F6FEB]/10 p-6 sm:p-8 rounded-3xl border border-[#1F6FEB]/20 hover:border-[#F5B400]/50 transition">
+        <i class="fa-solid fa-lock text-4xl text-[#F5B400] mb-4 sm:mb-6"></i>
+        <h3 class="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Secure & Scalable</h3>
+        <p class="text-gray-300 text-sm sm:text-base">Enterprise-grade security and infrastructure that grows with your business needs.</p>
+      </div>
+
+      <div class="bg-[#1F6FEB]/10 p-6 sm:p-8 rounded-3xl border border-[#1F6FEB]/20 hover:border-[#F5B400]/50 transition">
+        <i class="fa-solid fa-users text-4xl text-[#F5B400] mb-4 sm:mb-6"></i>
+        <h3 class="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Expert Team</h3>
+        <p class="text-gray-300 text-sm sm:text-base">Work with industry-leading specialists who understand your business domain.</p>
+      </div>
+
+      <div class="bg-[#1F6FEB]/10 p-6 sm:p-8 rounded-3xl border border-[#1F6FEB]/20 hover:border-[#F5B400]/50 transition">
+        <i class="fa-solid fa-headset text-4xl text-[#F5B400] mb-4 sm:mb-6"></i>
+        <h3 class="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Ongoing Support</h3>
+        <p class="text-gray-300 text-sm sm:text-base">Dedicated support team ensuring optimal performance and continuous improvement.</p>
+      </div>
+
+      <div class="bg-[#1F6FEB]/10 p-6 sm:p-8 rounded-3xl border border-[#1F6FEB]/20 hover:border-[#F5B400]/50 transition">
+        <i class="fa-solid fa-star text-4xl text-[#F5B400] mb-4 sm:mb-6"></i>
+        <h3 class="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Quality Guaranteed</h3>
+        <p class="text-gray-300 text-sm sm:text-base">High-quality deliverables backed by rigorous testing and quality assurance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS SECTION -->
+<section *ngIf="service" class="py-12 sm:py-16 md:py-24 bg-white">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#0A1931] text-center logo-font mb-8 sm:mb-12 md:mb-16">
+      How We Deliver
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-8">
+      <div class="text-center">
+        <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto bg-[#F5B400] text-[#0A1931] rounded-full flex items-center justify-center text-3xl sm:text-4xl font-bold mb-4 sm:mb-6">
+          1
+        </div>
+        <h3 class="text-lg sm:text-xl font-semibold text-[#0A1931] mb-3 sm:mb-4">Analysis</h3>
+        <p class="text-gray-600 text-sm sm:text-base">Deep understanding of your needs and goals</p>
+      </div>
+
+      <div class="text-center">
+        <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto bg-[#F5B400] text-[#0A1931] rounded-full flex items-center justify-center text-3xl sm:text-4xl font-bold mb-4 sm:mb-6">
+          2
+        </div>
+        <h3 class="text-lg sm:text-xl font-semibold text-[#0A1931] mb-3 sm:mb-4">Strategy</h3>
+        <p class="text-gray-600 text-sm sm:text-base">Custom roadmap tailored to your objectives</p>
+      </div>
+
+      <div class="text-center">
+        <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto bg-[#F5B400] text-[#0A1931] rounded-full flex items-center justify-center text-3xl sm:text-4xl font-bold mb-4 sm:mb-6">
+          3
+        </div>
+        <h3 class="text-lg sm:text-xl font-semibold text-[#0A1931] mb-3 sm:mb-4">Implementation</h3>
+        <p class="text-gray-600 text-sm sm:text-base">Expert execution with quality assurance</p>
+      </div>
+
+      <div class="text-center">
+        <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto bg-[#F5B400] text-[#0A1931] rounded-full flex items-center justify-center text-3xl sm:text-4xl font-bold mb-4 sm:mb-6">
+          4
+        </div>
+        <h3 class="text-lg sm:text-xl font-semibold text-[#0A1931] mb-3 sm:mb-4">Support</h3>
+        <p class="text-gray-600 text-sm sm:text-base">Ongoing maintenance and optimization</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED SERVICES -->
+<section *ngIf="relatedServices.length > 0" class="py-12 sm:py-16 md:py-24 bg-[#0A1931] text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold text-center logo-font mb-8 sm:mb-12 md:mb-16">
+      Explore Related Services
+    </h2>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      <div 
+        *ngFor="let relService of relatedServices"
+        (click)="navigateToService(relService.id)"
+        class="group bg-[#1F6FEB]/10 hover:bg-[#1F6FEB]/20 p-6 sm:p-8 rounded-3xl cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+        
+        <i [class]="'fa-solid ' + relService.icon + ' text-4xl sm:text-5xl text-[#F5B400] mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300'"></i>
+        
+        <h3 class="text-xl sm:text-2xl font-semibold group-hover:text-[#F5B400] transition-colors duration-300">
+          {{ relService.title }}
+        </h3>
+        
+        <p class="mt-2 sm:mt-4 text-gray-300 text-sm sm:text-base">
+          {{ relService.shortDescription }}
+        </p>
+        
+        <div class="mt-6 sm:mt-8 flex items-center gap-2 text-[#F5B400] font-semibold group-hover:gap-4 transition-all duration-300">
+          <span>View Details</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section *ngIf="service" class="py-12 sm:py-16 md:py-24 bg-gradient-to-r from-[#0A1931] to-[#1F6FEB] text-white">
+  <div class="max-w-4xl mx-auto text-center px-4 sm:px-6">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold logo-font mb-4 sm:mb-6">
+      Ready to Transform Your Business?
+    </h2>
+    <p class="text-base sm:text-lg md:text-xl text-gray-200 mb-8 sm:mb-12">
+      Let's discuss how {{ service.title }} can drive growth for your organization.
+    </p>
+    <button
+      routerLink="/contact"
+      (click)="scrollToTop()"
+      class="px-8 sm:px-16 py-4 sm:py-6 bg-[#F5B400] text-[#0A1931] font-bold text-base sm:text-lg rounded-3xl hover:shadow-2xl transition">
+      Get Started Today →
+    </button>
+  </div>
+</section>
+
+<!-- SERVICE NOT FOUND -->
+<section *ngIf="!service" class="min-h-screen flex items-center justify-center bg-[#0A1931] text-white">
+  <div class="text-center px-4">
+    <i class="fa-solid fa-exclamation-triangle text-6xl text-[#F5B400] mb-6"></i>
+    <h1 class="text-4xl font-semibold logo-font mb-4">Service Not Found</h1>
+    <p class="text-gray-400 mb-8">The service you're looking for doesn't exist.</p>
+    <button
+      routerLink="/services"
+      (click)="scrollToTop()"
+      class="px-8 py-4 bg-[#F5B400] text-[#0A1931] font-bold rounded-3xl hover:shadow-2xl transition">
+      Back to Services
+    </button>
+  </div>
+</section>

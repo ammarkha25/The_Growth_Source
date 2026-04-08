@@ -1,0 +1,157 @@
+/* HERO SECTION */
+section:first-child {
+  position: relative;
+}
+
+/* ANIMATIONS */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* BREADCRUMB */
+a[href^="#"] {
+  position: relative;
+  display: inline-flex;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: white;
+  transform: translateX(-4px);
+}
+
+/* CONTENT SECTIONS */
+h2 {
+  color: #0a1931;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  color: #0a1931;
+}
+
+/* ICON BOXES */
+.bg-red-100,
+.bg-blue-100,
+.bg-green-100 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+}
+
+/* LISTS */
+ul li {
+  transition: transform 0.3s ease;
+}
+
+ul li:hover {
+  transform: translateX(4px);
+}
+
+/* SPOTLIGHT BADGE */
+.bg-\[\#F5B400\] {
+  box-shadow: 0 4px 15px rgba(245, 180, 0, 0.2);
+}
+
+/* SIDEBAR */
+.sticky {
+  top: 100px;
+}
+
+@media (max-width: 1024px) {
+  .sticky {
+    position: static;
+    top: auto;
+  }
+}
+
+/* TECH TAGS */
+.bg-\[\#1F6FEB\]\/10 {
+  transition: all 0.3s ease;
+}
+
+.bg-\[\#1F6FEB\]\/10:hover {
+  background-color: rgba(31, 111, 235, 0.2);
+  transform: translateY(-2px);
+}
+
+/* CARD HOVER */
+.border {
+  transition: border-color 0.3s ease;
+}
+
+/* TESTIMONIAL */
+.bg-white {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.bg-white:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* SMOOTH TRANSITIONS */
+* {
+  transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* BUTTON EFFECTS */
+button {
+  position: relative;
+  overflow: hidden;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+button:hover::before {
+  left: 100%;
+}
+
+/* HERO GRADIENT OVERLAY */
+img + div {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.4),
+    transparent
+  );
+}
+
+/* RESPONSIVE ADJUSTMENTS */
+@media (max-width: 640px) {
+  .logo-font {
+    font-size: 1.75rem;
+  }
+
+  section {
+    padding: 2rem 0;
+  }
+}
+
+/* SECTION SPACING */
+section {
+  animation: fadeInUp 0.6s ease;
+}
+
+/* RELATED PROJECTS GRID */
+.grid {
+  animation: fadeInUp 0.8s ease;
+}
